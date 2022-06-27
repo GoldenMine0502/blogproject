@@ -1,1 +1,14 @@
 <h1>My Simple Blog</h1>
+
+<a href="{% url 'new' %}">HTML을 이용한 새 글 작성</a><br/>
+<a href="{% url 'formcreate' %}">Django을 이용한 새 글 작성</a><br/>
+<a href="{% url 'modelformcreate' %}">Django model form을 이용한 새 글 작성</a><br/>
+
+<!-- 이 공간에는 블로그 글들의 목록을 보여줄 예정 -->
+<h1>글 목록</h1>
+{% for post in posts %}
+    <h3>{{ post.title }}</h3>
+    <h4>작성 날짜: {{ post.date }}</h4>
+
+    {{ post.body }}
+{% endfor %}
